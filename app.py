@@ -43,7 +43,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
-"""
-A Personalized medical health chatbot that acts as a virtual health consultant, recommending lifestyle choices, workout routines, and doctor visit schedules to users based on their health data
-"""
