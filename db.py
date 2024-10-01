@@ -39,6 +39,32 @@ def create_user(name, email, password, age, gender, height, weight, medical_cond
 def get_user_by_email(email):
     return db.users.find_one({"email": email})
 
+def update_user_info(user_email, updated_info):
+    """
+    Update the user information in the database.
+
+    :param user_email: Email of the user whose information needs to be updated.
+    :param updated_info: Dictionary containing the updated user information.
+    :return: True if the update is successful, otherwise False.
+    """
+    try:
+        # Find the user by email and update their info
+        result = db.users.update_one(
+            {"email": user_email},  # Find user by email
+            {"$set": updated_info}  # Update user info
+        )
+
+        # Check if the update was successful
+        if result.modified_count > 0:
+            print("User information updated successfully!")
+            return True
+        else:
+            print("No changes were made.")
+            return False
+    except Exception as e:
+        print(f"An error occurred: {e}")
+        return False
+
 # Plan-related operations
 def create_plan(user_id, lifestyle_plan):
     plan = {

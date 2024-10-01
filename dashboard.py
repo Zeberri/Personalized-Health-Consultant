@@ -71,9 +71,15 @@ st.markdown(f"<p class='info-text'>Age: {user['age']} years</p>", unsafe_allow_h
 st.markdown(f"<p class='info-text'>Height: {user['height']} cm</p>", unsafe_allow_html=True)
 st.markdown(f"<p class='info-text'>Weight: {user['weight']} kg</p>", unsafe_allow_html=True)
 
-# Calculate and display BMI
-bmi = user['weight'] / ((user['height'] / 100) ** 2)
-st.markdown(f"<div class='bmi-box'>Your **BMI** is: {bmi:.2f}</div>", unsafe_allow_html=True)
+# Calculate and display BMI 
+if user['weight'] and user['height'] > 0:
+    bmi = user['weight'] / ((user['height'] / 100) ** 2)
+    st.markdown(f"<div class='bmi-box'>Your **BMI** is: {bmi:.2f}</div>", unsafe_allow_html=True)
+else:
+    st.markdown(f"<div class='bmi-box'>Add your Weight and Height to get your **BMI**", unsafe_allow_html=True)
+
+#st.page_link("pages/edit.py", label="Update your Info") #, icon="🏠")
+#st.link_button("Go to gallery", "/edit.py")
 
 st.markdown("")
 

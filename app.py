@@ -4,9 +4,10 @@ from db import get_user_by_email
 #from first import login
 
 def login():
-    st.sidebar.title("Sign Up / Login")
-    choice = st.sidebar.radio("Select an option", ["Login", "Sign Up"])
-    if choice == "Login":
+    #st.sidebar.title("Sign Up / Login")
+    #choice = st.sidebar.radio("Select an option", ["Login", "Sign Up"])
+    #if choice == "Login":
+    if st.session_state.get('page') == 'login':
         login_page()
     else:
         signup_page()
@@ -15,8 +16,12 @@ def main():
     if 'logged_in' not in st.session_state:
         st.session_state['logged_in'] = False
 
+    if 'page' not in st.session_state:
+        st.session_state['page'] = 'login'  # Start with the login page
+
     if not st.session_state['logged_in']:
         login()
+        
     else:
         #st.sidebar.title("Health Assistant")
 

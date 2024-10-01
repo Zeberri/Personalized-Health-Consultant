@@ -5,6 +5,10 @@ from db import create_user, get_user_by_email
 def signup_page():
     st.title("Sign Up")
 
+    # Add a link to switch back to the login page
+    if st.button("Already have an account? Log In"):
+        st.session_state['page'] = 'login'
+
     name = st.text_input("Name")
     email = st.text_input("Email")
     password = st.text_input("Password", type="password")
@@ -24,6 +28,7 @@ def signup_page():
             st.button("Go to Dashboard")
         else:
             st.error("Please fill all required fields.")
+    
 
 def login_page():
     st.title("Login")
@@ -41,3 +46,8 @@ def login_page():
             return 1
         else:
             st.error("Invalid email or password.")
+    
+    # Add a link to switch to the signup page
+    if st.button("Don't have an account? Sign Up"):
+        st.session_state['page'] = 'signup'
+
