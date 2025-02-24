@@ -83,6 +83,12 @@ else:
 
 st.markdown("")
 
+# Logout Button
+if st.button("Log Out"):
+    st.session_state['logged_in'] = False
+    st.session_state.pop('email', None)
+    st.rerun()  # Refresh to show login page
+
 # Health Recommendations Button
 if st.button("Get Health Recommendations", key="health-recommendation"):
     recommendations = get_health_recommendations(user)
