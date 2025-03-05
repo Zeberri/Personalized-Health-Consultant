@@ -1,13 +1,9 @@
-import os
+import os 
+import streamlit as st
 from pymongo import MongoClient
 from datetime import datetime
-from dotenv import load_dotenv
-
-load_dotenv()
-
-# Connect to MongoDB
-uri = os.getenv('MONGODB_CONNECTIONSTRING')
-database = os.getenv('MONGODB_DATABASE')
+uri = st.secrets["MONGODB_CONNECTIONSTRING"]
+database = st.secrets["MONGODB_DATABASE"]
 
 client = MongoClient(uri)
 db = client[database]

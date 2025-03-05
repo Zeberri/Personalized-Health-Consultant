@@ -1,14 +1,12 @@
 import os
-import requests
 from openai import OpenAI
-from dotenv import load_dotenv
+import streamlit as st
 from db import get_consultation_log
 
-load_dotenv()
 
 # GitHub OpenAI Configuration
-GITHUB_TOKEN = os.getenv("GITHUB_TOKEN")
-GITHUB_ENDPOINT = os.getenv("GITHUB_ENDPOINT")
+GITHUB_TOKEN = st.secrets["GITHUB_TOKEN"]
+GITHUB_ENDPOINT = st.secrets["GITHUB_ENDPOINT"]
 MODEL_NAME = "gpt-4o-mini"
 
 # Initialize OpenAI client
