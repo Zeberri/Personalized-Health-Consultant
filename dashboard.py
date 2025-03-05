@@ -63,7 +63,7 @@ else:
 st.markdown("<h1 class='title'>🏥 Health Dashboard</h1>", unsafe_allow_html=True)
 
 # Image at the top
-st.image("./assets/dashboard.png", use_column_width=True, caption="Your Personalized Health Dashboard")
+st.image("./assets/dashboard.png", use_container_width=True, caption="Your Personalized Health Dashboard")
 
 # User Information Display
 st.markdown(f"<h2 class='subtitle'>Welcome, {user['name']}!</h2>", unsafe_allow_html=True)

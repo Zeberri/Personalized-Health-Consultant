@@ -58,7 +58,7 @@ else:
 st.markdown("<h1 class='title'>🌿 Lifestyle Planner</h1>", unsafe_allow_html=True)
 
 # Image at the top
-st.image("./assets/lifestyle.png", use_column_width="auto", caption="Your Personalized Lifestyle Plan")
+st.image("./assets/lifestyle.png", use_container_width="auto", caption="Your Personalized Lifestyle Plan")
 
 # Fetch and display latest lifestyle plan
 latest_plan = get_latest_plan(user['_id'])

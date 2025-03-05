@@ -56,7 +56,7 @@ else:
 st.markdown("<h1 class='title'>💪 Workout Planner</h1>", unsafe_allow_html=True)
 
 # Image at the top
-st.image("./assets/workout.jpg", use_column_width=True, caption="Your Personalized Workout Plan")
+st.image("./assets/workout.jpg", use_container_width=True, caption="Your Personalized Workout Plan")
 
 # Fetch and display latest workout plan
 latest_workout = get_latest_workout(user['_id'])
